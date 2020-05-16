@@ -1,0 +1,116 @@
+*****************************************
+./run_docker.sh OUTPUT
+*****************************************
+Sending build context to Docker daemon  749.1kB
+Step 1/6 : FROM python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 82bfa08440ee
+Step 3/6 : COPY app.py .
+ ---> Using cache
+ ---> d29db146bbfb
+Step 4/6 : RUN python -m pip install --upgrade -r ./requirements.txt
+ ---> Running in c95c99af5d8c
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: './requirements.txt'
+WARNING: You are using pip version 19.1.1, however version 20.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+The command '/bin/sh -c python -m pip install --upgrade -r ./requirements.txt' returned a non-zero code: 1
+REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
+<none>              <none>              d29db146bbfb        About a minute ago   929MB
+<none>              <none>              603906c36a94        7 minutes ago        929MB
+mysql               latest              9b51d9275906        2 months ago         547MB
+python              3.7.3-stretch       34a518642c76        11 months ago        929MB
+Unable to find image 'aamirpinger/udacity-devops-project4:latest' locally
+docker: Error response from daemon: pull access denied for aamirpinger/udacity-devops-project4, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+aamir@ap-linux:/media/aamir/860CBDDD0CBDC907/udacity/devops/DevOps_Microservices/project-ml-microservice-kubernetes$ ./run_docker.sh
+Sending build context to Docker daemon  749.1kB
+Step 1/6 : FROM python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 82bfa08440ee
+Step 3/6 : COPY . .
+ ---> 46be590b2421
+Step 4/6 : RUN python -m pip install --upgrade -r requirements.txt
+ ---> Running in 8752d59ba2cf
+Collecting Click==7.0 (from -r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+Collecting Flask==1.0.2 (from -r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91kB)
+Collecting itsdangerous==1.1.0 (from -r requirements.txt (line 3))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Jinja2==2.10.3 (from -r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/65/e0/eb35e762802015cab1ccee04e8a277b03f1d8e53da3ec3106882ec42558b/Jinja2-2.10.3-py2.py3-none-any.whl (125kB)
+Collecting MarkupSafe==1.1.1 (from -r requirements.txt (line 5))
+  Downloading https://files.pythonhosted.org/packages/98/7b/ff284bd8c80654e471b769062a9b43cc5d03e7a615048d96f4619df8d420/MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl
+Collecting numpy==1.17.2 (from -r requirements.txt (line 6))
+  Downloading https://files.pythonhosted.org/packages/ba/e0/46e2f0540370f2661b044647fa447fef2ecbcc8f7cdb4329ca2feb03fb23/numpy-1.17.2-cp37-cp37m-manylinux1_x86_64.whl (20.3MB)
+Collecting pandas==0.24.2 (from -r requirements.txt (line 7))
+  Downloading https://files.pythonhosted.org/packages/22/e6/2d47835f91eb010036be207581fa113fb4e3822ec1b4bafb0d3d105fede6/pandas-0.24.2-cp37-cp37m-manylinux1_x86_64.whl (10.1MB)
+Collecting python-dateutil==2.8.0 (from -r requirements.txt (line 8))
+  Downloading https://files.pythonhosted.org/packages/41/17/c62faccbfbd163c7f57f3844689e3a78bae1f403648a6afb1d0866d87fbb/python_dateutil-2.8.0-py2.py3-none-any.whl (226kB)
+Collecting pytz==2019.3 (from -r requirements.txt (line 9))
+  Downloading https://files.pythonhosted.org/packages/e7/f9/f0b53f88060247251bf481fa6ea62cd0d25bf1b11a87888e53ce5b7c8ad2/pytz-2019.3-py2.py3-none-any.whl (509kB)
+Collecting scikit-learn==0.20.3 (from -r requirements.txt (line 10))
+  Downloading https://files.pythonhosted.org/packages/aa/cc/a84e1748a2a70d0f3e081f56cefc634f3b57013b16faa6926d3a6f0598df/scikit_learn-0.20.3-cp37-cp37m-manylinux1_x86_64.whl (5.4MB)
+Collecting scipy==1.3.1 (from -r requirements.txt (line 11))
+  Downloading https://files.pythonhosted.org/packages/94/7f/b535ec711cbcc3246abea4385d17e1b325d4c3404dd86f15fc4f3dba1dbb/scipy-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (25.2MB)
+Collecting six==1.12.0 (from -r requirements.txt (line 12))
+  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
+Collecting Werkzeug==0.16.0 (from -r requirements.txt (line 13))
+  Downloading https://files.pythonhosted.org/packages/ce/42/3aeda98f96e85fd26180534d36570e4d18108d62ae36f87694b476b83d6f/Werkzeug-0.16.0-py2.py3-none-any.whl (327kB)
+Installing collected packages: Click, MarkupSafe, Jinja2, Werkzeug, itsdangerous, Flask, numpy, six, python-dateutil, pytz, pandas, scipy, scikit-learn
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.3 MarkupSafe-1.1.1 Werkzeug-0.16.0 itsdangerous-1.1.0 numpy-1.17.2 pandas-0.24.2 python-dateutil-2.8.0 pytz-2019.3 scikit-learn-0.20.3 scipy-1.3.1 six-1.12.0
+WARNING: You are using pip version 19.1.1, however version 20.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Removing intermediate container 8752d59ba2cf
+ ---> a601a1359ca1
+Step 5/6 : EXPOSE 80
+ ---> Running in 8ef5256bbbd9
+Removing intermediate container 8ef5256bbbd9
+ ---> 8e5940116b27
+Step 6/6 : ENTRYPOINT [ "python", "app.py" ]
+ ---> Running in dae51e674b6c
+Removing intermediate container dae51e674b6c
+ ---> de04ed63baac
+Successfully built de04ed63baac
+Successfully tagged aamirpinger/udacity-devops-project4:latest
+REPOSITORY                            TAG                 IMAGE ID            CREATED                  SIZE
+aamirpinger/udacity-devops-project4   latest              de04ed63baac        Less than a second ago   1.24GB
+<none>                                <none>              d29db146bbfb        3 minutes ago            929MB
+<none>                                <none>              603906c36a94        9 minutes ago            929MB
+mysql                                 latest              9b51d9275906        2 months ago             547MB
+python                                3.7.3-stretch       34a518642c76        11 months ago            929MB
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 193-420-334
+[2020-05-16 10:33:01,339] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-05-16 10:33:01,367] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-05-16 10:33:01,381] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-05-16 10:33:01,385] INFO in app: Prediction: 
+[20.35373177134412]
+172.17.0.1 - - [16/May/2020 10:33:01] "POST /predict HTTP/1.1" 200 -
+
+
+*****************************************
+./make_prediction.sh OUTPUT
+*****************************************
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
